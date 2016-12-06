@@ -4,6 +4,9 @@ MAINTAINER Sam
 #change directory
 WORKDIR /opt/
 
+RUN apt-get install git -y
+RUN apt-get install tree
+
 #download AMP
 RUN apt-get update
 RUN apt-get install apache2 -y
@@ -22,6 +25,15 @@ RUN apt-get update
 #install zabbix server
 RUN apt-get install -q zabbix-server-mysql zabbix-frontend-php -y
 
+#clone repo
+RUN git clone https://github.com/SASM92/DockerProj1.git
+
+#run varfile
+WORKDIR DockerProj1/files/
+RUN tree
+RUN chmod a+x db.sh
+CMD ./db.sh
+ 
 
 
 
