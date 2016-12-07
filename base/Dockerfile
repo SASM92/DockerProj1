@@ -7,7 +7,7 @@ RUN apt-get install -y wget
 
 #download and install java
 RUN wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u5-linux-x64.tar.gz
-RUN sudo tar -zxf jdk-8u5-linux-x64.tar.gz -C /opt
+RUN tar -zxf jdk-8u5-linux-x64.tar.gz -C /opt
 
 
 #update java
