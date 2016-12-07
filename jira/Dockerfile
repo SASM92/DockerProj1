@@ -19,3 +19,6 @@ RUN ./atlassian-jira-software-7.2.4-x64.bin -q -varfile DockerProj1/files/respon
 
 WORKDIR /opt/atlassian/jira/bin
 CMD ./start-jira.sh && tail -F /var/lib/jira/error.log
+
+#commands to run
+#sudo docker run -d -p 8006:8082 jiracon

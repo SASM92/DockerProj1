@@ -13,3 +13,6 @@ RUN apt-get install jenkins -y
 
 #run
 CMD service jenkins start && tail -F /var/log/jenkins/jenkins.log 
+
+#commands to run
+#sudo docker run -d -p 8086:8080 jenkinscon
