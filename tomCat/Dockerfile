@@ -1,4 +1,4 @@
-FROM base
+FROM dockerproj1_base
 MAINTAINER Sam
 
 #create group called tomcat
