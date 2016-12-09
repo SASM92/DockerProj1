@@ -1,50 +1,48 @@
-version: '2'
 
-services:
-	base:
-		image: ubuntu:yakkety
+base:
+ build: ./base
 
-	jenkins:
-		build: ./jenkins
-		links:
-			- base
-		container_name: jenkinscon
-		ports:
-			- "8086:8080"
-		tty: true
-			
-	jira
-		build: ./jira
-		links:
-			- base
-		container_name: jiracon
-		ports:
-			- "8006:8082"
-		tty: true
-			
-	nexus
-		build: ./nexus
-		links:
-			- base
-		container_name: nexuscon
-		ports:
-			- "8007:8081"
-		tty: true
+jenkinscon:
+ build: ./jenkins
+ links:
+  - base
+ container_name: jenkinscon
+ ports:
+  - "8086:8080"
+ tty: true
 
-	zabbix
-		build: ./zabbix
-		links:
-			- base
-		container_name: zabbixcon
-		ports:
-			- "80:80"
-		tty: true
-			
-	tomcat
-		build: ./tomcat
-		links:
-			- base
-		container_name: tomcatcon
-		ports:
-			- "8008:8080"
-		tty: true
+jiracon:
+ build: ./jira
+ links:
+  - base
+ container_name: jiracon
+ ports:
+  - "8006:8082"
+ tty: true
+
+nexuscon:
+ build: ./nexus
+ links:
+  - base
+ container_name: nexuscon
+ ports:
+  - "8007:8081"
+ tty: true
+
+zabbixcon:
+ build: ./zabbix
+ links:
+  - base
+ container_name: zabbixcon
+ ports:
+  - "80:80"
+ tty: true
+
+tomcatcon:
+ build: ./tomcat
+ links:
+  - base
+ container_name: tomcatcon
+ ports:
+  - "8008:8080"
+ tty: true
