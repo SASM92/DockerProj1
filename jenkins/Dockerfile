@@ -1,4 +1,4 @@
-FROM dockerproj1_base
+FROM base
 MAINTAINER Sam
 
 #download key for jenkins and then add key with "apt-key add"
