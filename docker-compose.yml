@@ -4,12 +4,52 @@ services:
   build: ./base
   image: base:latest
 
-jiracon:
- build: ./jira
- image: jir:latest
- links:
-  - base
- container_name: jiracon
- ports:
-  - "8006:8082"
- tty: true
+ jenkinscon:
+  build: ./jenkins
+  image: jen:latest
+  depends_on:
+   - base
+  container_name: jenkinscon
+  ports:
+   - "8086:8080"
+  tty: true
+
+ jiracon:
+  build: ./jira
+  image: jir:latest
+  depends_on:
+   - base
+  container_name: jiracon
+  ports:
+   - "8006:8082"
+  tty: true
+
+ nexuscon:
+  build: ./nexus
+  image: nex:latest
+  depends_on:
+   - base
+  container_name: nexuscon
+  ports:
+   - "8007:8081"
+  tty: true
+
+ zabbixcon:
+  build: ./zabbix
+  image: zab:latest
+  depends_on:
+   - base
+  container_name: zabbixcon
+  ports:
+   - "80:80"
+  tty: true
+
+ tomcatcon:
+  build: ./tomcat
+  image: tom:latest
+  depends_on:
+   - base
+  container_name: tomcatcon
+  ports:
+   - "8008:8080"
+  tty: true
