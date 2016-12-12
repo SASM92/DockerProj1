@@ -1,4 +1,4 @@
-FROM dockerproj1_base
+FROM base
 MAINTAINER Sam
 
 #change directory
