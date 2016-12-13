@@ -12,8 +12,13 @@ Step 3: run: sudo docker-compose up –d
 
 #Access
 You can access the following services on their ports
+
 Jenkins – IPADDRESS:8086
+
 Jira – IPADDRESS:8006
+
 Nexus – IPADDRESS:8007
+
 Tomcat – IPADDRESS:8008
+
 Zabbix – IPADDRESS/zabbix
